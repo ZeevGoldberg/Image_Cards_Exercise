@@ -2,81 +2,123 @@
 @import url(pages\flex-task\styles\_base.css);
 @import url(pages\flex-task\styles\_reset.css);
 @import url(pages\flex-task\styles\_typography.css);
-/* Ben's comment  */
-/* בונים את הקלאס לקופסא הראשית - כלומר העיצוב של גוף העמוד */
-.container {
-  /* הגבול החיצוני הוא חמש פיקסל */
-  padding: 5px;
-  /* משתמשים ברכיב פלקס בשביל העיצוב - כנראה זה דבר קבוע */
-  display: flex;
-  /* הצורה הזו של הפלקס נכונה ולא עמודה, כי אחר כך צריך שכמה קופסאות יעמדו אחת ליד השנייה וא נעשה עמודה - הכל יהיה תמיד בטור */
-  flex-wrap: wrap;
+
+main.wrapper {
+  background: #7fffd4;
+  /* הקונטיינר המרכזי לא יכול להיות קטן מזה */
+  min-height: 100vh;
 }
-/* עכשיו מכניסים את הקלאס של הקופסא. לכל צבע יש גם את הקלאס של הקופסא */
-.box {
-  /* הצבע של הקופסה עצמה - בשביל שהכתב הפנימי יהיה בלבן */
-  color: white;
-  /* גובה כללי לכל הקופסאות */
-  height: 100px;
-  /* גודל הפונט */
-  font-size: 25px;
-  /* התצוגה מוצגת לפי הכלי פלקס ואז לא צריך להתעסק עם הגדרות גרפיות */
-  display: flex;
-  /* יישור רוחבי כותבים לפי ג'סטיפיי */
+header {
+  background: skyblue;
+  width: 100%;
+  height: 10rem;
+  box-shadow: 0 0.5rem 1.5px lightskyblue;
+  height: 10rem;
+  position: fixed;
+  /* האינדקס מגדיר שהתמונה הזו חשובה מהטקסט הרגיל ולכן היא תוצג מקדימה גם מעל הטקסט */
+  z-index: 1;
+}
+.header_title {
+  font-size: 4rem;
+  text-align: center;
+  /* מרווח בין השורות */
+  line-height: 10rem;
+}
+.top_background {
+  width: 100%;
+  background: cornflowerblue;
+  height: 358px;
+}
+.cards_box {
+  position: absolute;
+  /* אחרי שקיבענו את הפוזישן של הקונטיינר אנחנו קובעים את המרחק שלו מהגופים האחרים ובמקרה זה אין מרחק */
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  /* כל האובייקטים בקונטיינר מתגלגלים */
+  overflow: scroll;
+  /* נכון שאין מרחק מאובייקט אחר, אבל הוספנו מרחק סתמי מהתקרה
+   */
+  padding-top: 150px;
+}
+.row {
+  display: grid;
   justify-content: center;
-  /* יישור לאורך כותבים לפי אליין */
-  align-items: center;
-  /* על מנת לוודא שהקופסא או קופסאות תופסים מאה אחוז מסך */
-  flex-basis: 100%;
-  /* על מנת לעגל פינות של תמונה מגדירים כמה מהרדיוס של הנקודה המרכזית נחתך */
+  /* את זה אני לא מבין */
+  grid-template-columns: 33rem 33rem;
+  min-height: 450px;
+}
+.divider {
+  background: magenta;
+  border: mediumseagreen solid 1px;
+  text-align: center;
+  color: whitesmoke;
+  position: sticky;
+  top: 0;
+  top: -50%;
+  z-index: 1;
+  font-size: 3rem;
+  padding: 30px;
+  /* האפשרות הראשונה של המרגין זה המרווח למעלה והשנייה זה ימין ושמאל ופה אין מרווח בכלל מהצדדים */
+  margin: 30px 0;
+}
+.card {
   border-radius: 8px;
-  /* מרחק בין הקופסא למה שלצידה */
-  margin: 5px;
+  background: rgb(75, 65, 85);
+  color: whitesmoke;
+  padding: 35px 0;
+  margin: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
 }
-/* עכשיו כותבים קלאסים נוספים על מנת לתת לכל קופסא לפי הצבע הרצוי */
-.blue {
-  background-color: blue;
-}
-.orange {
-  background-color: orange;
-  /* לשים לב שמכניסים פה שינוי בגובה - כי התיבה הכתומה גבוהה יותר מהכחולות - ולהם נשארנו עם הגובה הבסיסי של כל הקופסאות. */
-  height: 250px;
-}
-.green {
-  background-color: green;
-}
-.red {
-  background-color: red;
-  /* גם פה מוסיפים הוראה לשינוי גובה - שדורסת את ההוראה של הקלאס הראשון */
+.card_profile_image {
+  width: 150px;
   height: 150px;
+  border-radius: 50%;
+  border: solid antiquewhite 4px;
+  display: block;
 }
-.expendable {
-  /* הקלאס הזה מגיע ריק כי הוא לא אמור לפעול עד שמגיע הכלל של המדיה קווארי */
-  display: none;
+.card_first_letter {
+  position: relative;
+  top: -28px;
+  right: -45px;
+  border-radius: 50%;
+  background: firebrick;
+  color: white;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  border: solid 2px antiquewhite;
+  display: grid;
+  justify-items: center;
+  align-items: center;
 }
-/* המדיה קווארי הראשון -  */
-@media all and (min-width: 800px) {
-  /* עדיין לא מבין מה הפלקס עושה פה */
-  .expendable {
-    display: flex;
-  }
-  .red {
-    /* ברגע שהקופסאות האדומות מתרחבות מעבר לכמות הפיקסלים שלמעלה נכנס כלל פלקס חדש שהתיבות מסתדרות בשורה אחת - פחות הפיקסלים שמשמשים כגבול חיצוני */
-    flex-basis: calc(50% - 10px);
-  }
+.card_full_name {
+  margin-top: 0px;
+  font-size: 20px;
+  color: white;
+  letter-spacing: 0.1px;
 }
-/* המדיה קווארי השני */
-@media all and (min-width: 1200px) {
-  /* עכשיו מוסיפים פה כלל נוסף שמשפיע על המסך שהיוזר מרחיב את המסך מעבר ל1200 פיקסל. קודם כל מוסיפים הוראה ליצור יותר הרחבה בין כל הקופסאות, ואז כלל לגבי הקופסאות הירוקות מסתדרות לשורה אחת בוגבה שונה */
-  .container {
-    row-gap: 20px;
-  }
-  .green {
-    flex-basis: calc(33.3333% - 10px);
-    height: 300px;
-  }
-  /* הקופסאות האדומות מתחברות לשורה אחת שמתחלקת לשלוש */
-  .red {
-    flex-basis: calc(25% - 10px);
-  }
+.card_family_title {
+  font-size: 16px;
+  color: whitesmoke;
+  font-weight: lighter;
+  letter-spacing: 0.2px;
+}
+.card_stats {
+  margin: 30px 0;
+  background: lightblue;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+/* קודם כל נותנים הגדרה לכל קופסא בפני עצמה ורק לאמצעית דורסים את הקוד של הצבע */
+.stats_box {
+  padding: 15px;
+  /* פה אני ממרכז את הטקסט ולא את האובייקט */
+  text-align: center;
+}
+.stats_box_points {
+  background: lightskyblue;
 }

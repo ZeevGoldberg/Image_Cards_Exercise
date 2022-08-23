@@ -4,22 +4,106 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Flexbox intro</title>
+    <title>Our Family Cards</title>
     <link rel="stylesheet" href="./styles/main.css" />
   </head>
   <body>
-    <div class="container">
-      <!-- הערה -->
-      <div class="box blue">Blue</div>
-      <div class="box blue">Blue</div>
-      <div class="box orange">Orange</div>
-      <div class="box green">Green</div>
-      <div class="box green">Green</div>
-      <div class="box green">Green</div>
-      <div class="box red">Red</div>
-      <div class="box red">Red</div>
-      <div class="box red expendable">Red</div>
-      <div class="box red expendable">Red</div>
-    </div>
+    <main class="wrapper">
+      <header>
+        <h1 class="header_title">Our Family Cards</h1>
+      </header>
+      <div class="top_background"></div>
+      <div class="cards_box">
+        <section class="row">
+          <article class="card">
+            <img 
+              class="card_profile_image" 
+              src="https://images.unsplash.com/photo-1444069069008-83a57aac43ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" 
+              alt="No Pic"
+            />
+            <h1 class="card_first_letter">S</h1>
+            <h1 class="card_full_name">Samuel Garcia</h1>
+            <h3 class="card_family_title">Grandpa</h3>
+            <section class="card_stats">
+              <div class="stats_box  stats_box_age">
+                <h2 class="box_num">87</h2>
+                <h3 class="box_title">Age</h3>
+              </div>
+              <div class="stats_box stats_box_points">
+                    <h2 class="box_num">409</h2>
+                    <h3 class="box_title">Points</h3>
+              </div>
+              <div class="stats_box stats_box_letters">
+                    <h2 class="box_num">17</h2>
+                    <h3 class="box_title">Letters</h3>
+              </div>
+            </section>
+            <button class="bottom_buttun">Contact</button>
+          </article>
+          <article class="card">
+              <img 
+                class="card_profile_image" 
+                src="https://images.unsplash.com/photo-1637080146000-4c0673b1bb71?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" 
+                alt="No Pic"
+              />
+              <h1 class="card_first_letter">M</h1>
+              <h1 class="card_full_name">Mimi Garcia</h1>
+              <h3 class="card_family_title">Grandma</h3>
+              <section class="card_stats">
+                <div class="stats_box stats_box_age">
+                  <h2 class="box_num">86</h2>
+                  <h3 class="box_title">Age</h3>
+                </div>
+                <div class="stats_box stats_box_points">
+                    <h2 class="box_num">237</h2>
+                    <h3 class="box_title">Points</h3>
+                  </div>
+                  <div class="stats_box stats_box_letters">
+                    <h2 class="box_num">12</h2>
+                    <h3 class="box_label">Letters</h3>
+              </section>
+              <button class="bottom_buttun">Contact</button>
+            </article>
+        </section>
+        <div class="divider">Our GrandParents</div>
+        <section class="row">
+          <article class="card">
+            <img 
+              class="card_profile_image" 
+              src="https://images.unsplash.com/photo-1444069069008-83a57aac43ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" 
+              alt="No Pic"
+            />
+            <h1 class="card_first_letter">S</h1>
+            <h1 class="card_full_name">Samuel Garcia</h1>
+            <h3 class="card_family_title">Grandpa</h3>
+            <section class="card_stats">
+              <div class="stats_box  stats_box_age">
+                <h2 class="box_num">87</h2>
+                <h3 class="box_title">Age</h3>
+              </div>
+            </section>
+            <button class="bottom_buttun">Contact</button>
+          </article>
+          <article class="card">
+              <img 
+                class="card_profile_image" 
+                src="https://images.unsplash.com/photo-1444069069008-83a57aac43ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" 
+                alt="No Pic"
+              />
+              <h1 class="card_first_letter">S</h1>
+              <h1 class="card_full_name">Samuel Garcia</h1>
+              <h3 class="card_family_title">Grandpa</h3>
+              <section class="card_stats">
+                <div class="stats_box  stats_box_age">
+                  <h2 class="box_num">87</h2>
+                  <h3 class="box_title">Age</h3>
+                </div>
+              </section>
+              <button class="bottom_buttun">Contact</button>
+            </article>
+        </section>
+        <div class="divider">Our Parents</div>
+      </div>
+    </main>
   </body>
 </html>
